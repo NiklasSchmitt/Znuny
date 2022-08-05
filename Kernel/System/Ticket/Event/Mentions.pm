@@ -58,24 +58,63 @@ sub Run {
         ) // {};
     }
 
-    %Recipients = ( %Recipients, %{$GroupUsers} );
-    return {} if !%Recipients;
+    # %Recipients = ( %Recipients, %{$GroupUsers} );
+    my %MergedRecipients = ( %Recipients, %{$GroupUsers} );
+
+    return {} if !%MergedRecipients;
 
     $Self->_GetRecipientAddresses(
-        Recipients => \%Recipients,
+        Recipients => \%MergedRecipients,
     );
 
     # If addresses could not be parsed/verified.
-    return {} if !%Recipients;
+    return {} if !%MergedRecipients;
 
-    $MentionObject->SendNotification(
-        Recipients => \%Recipients,
-        TicketID   => $Param{Data}{TicketID},
-        ArticleID  => $Param{Data}{ArticleID},
-        UserID     => $Param{UserID},
-    );
+    my $MentionsConfig = $ConfigObject->Get('Mentions') // {};
+    my $NotificationLimit = $MentionsConfig->{NotificationLimit} || undef;
 
-    return \%Recipients;
+    if (defined($NotificationLimit)) {
+        my $NumberOfTotalRecipients = keys %MergedRecipients;
+
+        if ($NumberOfTotalRecipients <= $NotificationLimit) {
+            $MentionObject->SendNotification(
+                Recipients => \%MergedRecipients,
+                TicketID   => $Param{Data}{TicketID},
+                ArticleID  => $Param{Data}{ArticleID},
+            );
+        } else {
+            # NotificationLimit is reached
+
+            # this is my first version to solve the problem... Sort the hash and pick the first X MergedRecipients
+            my %LimitedRecipients;
+            my $i = 0;
+            foreach my $Recipient (sort keys %MergedRecipients) {
+                $LimitedRecipients{$Recipient} = $MergedRecipients{$Recipient};
+                $i++;
+                last if $i >= $NotificationLimit;
+            }
+
+            $MentionObject->SendNotification(
+                Recipients => \%LimitedRecipients,
+                TicketID   => $Param{Data}{TicketID},
+                ArticleID  => $Param{Data}{ArticleID},
+            );
+
+
+            # in version 2 I want to notify first all mentioned users and then the mentioned groups (if number of users are lower than the limit)
+            #my $NumberOfRecipients = keys %Recipients;
+            #my $NumberOfGroups = keys %{$GroupUsers};
+        }
+    } else {
+        # no NotificationLimit is defined. Send all Notifications
+        $MentionObject->SendNotification(
+            Recipients => \%MergedRecipients,
+            TicketID   => $Param{Data}{TicketID},
+            ArticleID  => $Param{Data}{ArticleID},
+        );
+    }
+
+    return \%MergedRecipients;
 }
 
 sub _GetRecipientAddresses {

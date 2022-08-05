@@ -2373,6 +2373,13 @@
             </Item>
         </Value>
     </Setting>
+    <Setting Name="Mentions###NotificationLimit" Required="0" Valid="1">
+        <Description Translatable="1">Defines a value for how many users should receive a notification of a mention.</Description>
+        <Navigation>Core</Navigation>
+        <Value>
+            <Item ValueType="String" ValueRegex="^[1-9]\d*$">50</Item>
+        </Value>
+    </Setting>
     <Setting Name="Mentions###ToolbarCount" Required="0" Valid="1">
         <Description Translatable="1">Defines if the toolbar mention icon should count mentions.</Description>
         <Navigation>Core</Navigation>
