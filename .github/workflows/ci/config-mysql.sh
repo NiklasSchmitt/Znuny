@@ -17,7 +17,7 @@ echo "Use SCHEMA_FILE: $SCHEMA_FILE"
 echo "Use INITIAL_INSERT_FILE: $INITIAL_INSERT_FILE"
 echo "Use SCHEMA_POST_FILE: $SCHEMA_POST_FILE"
 
-echo "Change character set";
+echo "Change character set"
 mysql -h mariadb -u "${MYSQL_USERNAME}" -p"${MYSQL_PASSWORD}" otrs < "ALTER DATABASE otrs DEFAULT CHARACTER SET utf8;ALTER DATABASE otrs DEFAULT COLLATE utf8_unicode_ci;" || exit 1
 
 echo "Create schema"
