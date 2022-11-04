@@ -87,6 +87,8 @@ jobs:
 
       - name: Check Contributors
         run: |
+          cd /opt/otrs/
+          git init
           su -c "bin/otrs.Console.pl Dev::Code::ContributorsListUpdate" - otrs
           if [ "$(git diff --exit-code AUTHORS.md)" ]; then echo 'The ContributorsList is not updated.' && exit 1; else echo 'The ContributorsList is updated.' && exit 0; fi
 
