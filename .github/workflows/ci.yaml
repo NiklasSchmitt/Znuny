@@ -100,7 +100,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
         env:
-          fetch-depth: "1"
+          fetch-depth: "0"
 
       - name: Install dependencies
         run: .github/workflows/ci/dependencies.sh
@@ -128,7 +128,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
         env:
-          fetch-depth: "1"
+          fetch-depth: "0"
 
       - name: Install dependencies
         run: .github/workflows/ci/dependencies.sh
@@ -206,7 +206,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
         env:
-          fetch-depth: "1"
+          fetch-depth: "0"
 
       - name: Install dependencies
         run: .github/workflows/ci/dependencies.sh
