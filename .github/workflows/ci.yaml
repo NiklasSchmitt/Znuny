@@ -88,6 +88,7 @@ jobs:
       - name: Check Contributors
         run: |
           git init
+          git config --global --add safe.directory ${GITHUB_WORKSPACE}
           su -c "bin/otrs.Console.pl Dev::Code::ContributorsListUpdate" - otrs
           if [ "$(git diff --exit-code AUTHORS.md)" ]; then echo 'The ContributorsList is not updated.' && exit 1; else echo 'The ContributorsList is updated.' && exit 0; fi
 
@@ -110,6 +111,7 @@ jobs:
       - name: Check Database:Schema
         run: |
           git init
+          git config --global --add safe.directory ${GITHUB_WORKSPACE}
           SCHEMA_FILE=$(find scripts/database -type f -name '*schema.xml')
           SCHEMA_FILE_NAME=$(find scripts/database -type f -name '*schema.xml' | cut -d/ -f3- | sed 's/\.xml$//')
           echo "Found schema file $SCHEMA_FILE"
@@ -137,6 +139,7 @@ jobs:
       - name: Check Database:InitialInsert
         run: | 
           git init
+          git config --global --add safe.directory ${GITHUB_WORKSPACE}
           INITIAL_INSERT_FILE=$(find scripts/database -type f -name '*initial_insert.xml')
           INITIAL_INSERT_FILE_NAME=$(find scripts/database -type f -name '*initial_insert.xml' | cut -d/ -f3- | sed 's/\.xml$//')
           echo "Found initial insert file $INITIAL_INSERT_FILE"
@@ -214,6 +217,7 @@ jobs:
       - name: Check RPMSpec
         run: |
           git init
+          git config --global --add safe.directory ${GITHUB_WORKSPACE}
           su -c "bin/otrs.Console.pl Dev::Tools::RPMSpecGenerate" - otrs
           git diff --exit-code scripts/auto_build/spec/
           if [ "$(git diff --exit-code scripts/auto_build/spec/)" ]; then echo "The RPMSpec's are not updated." && exit 1; else echo "All RPMSpec's are updated." && exit 0; fi
