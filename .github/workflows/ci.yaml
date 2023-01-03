@@ -80,12 +80,10 @@ jobs:
           fetch-depth: "0"
 
       - name: Install dependencies
-        run: | 
-          .github/workflows/ci/dependencies.sh
+        run: .github/workflows/ci/dependencies.sh
 
       - name: Setup Znuny
-        run: | 
-          .github/workflows/ci/setup.sh
+        run: .github/workflows/ci/setup.sh
 
       - name: Check Contributors
         run: |
