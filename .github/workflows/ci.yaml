@@ -87,7 +87,7 @@ jobs:
 
       - name: Check Contributors
         run: |
-          cd /opt/otrs/
+          cd ${GITHUB_WORKSPACE}
           git init
           su -c "bin/otrs.Console.pl Dev::Code::ContributorsListUpdate" - otrs
           if [ "$(git diff --exit-code AUTHORS.md)" ]; then echo 'The ContributorsList is not updated.' && exit 1; else echo 'The ContributorsList is updated.' && exit 0; fi
@@ -100,7 +100,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
         env:
-          fetch-depth: "0"
+          fetch-depth: "1"
 
       - name: Install dependencies
         run: .github/workflows/ci/dependencies.sh
@@ -110,7 +110,7 @@ jobs:
 
       - name: Check Database:Schema
         run: |
-          cd /opt/otrs/
+          cd ${GITHUB_WORKSPACE}
           git init
           SCHEMA_FILE=$(find scripts/database -type f -name '*schema.xml')
           SCHEMA_FILE_NAME=$(find scripts/database -type f -name '*schema.xml' | cut -d/ -f3- | sed 's/\.xml$//')
@@ -128,7 +128,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
         env:
-          fetch-depth: "0"
+          fetch-depth: "1"
 
       - name: Install dependencies
         run: .github/workflows/ci/dependencies.sh
@@ -138,7 +138,7 @@ jobs:
 
       - name: Check Database:InitialInsert
         run: |
-          cd /opt/otrs/
+          cd ${GITHUB_WORKSPACE}
           git init
           INITIAL_INSERT_FILE=$(find scripts/database -type f -name '*initial_insert.xml')
           INITIAL_INSERT_FILE_NAME=$(find scripts/database -type f -name '*initial_insert.xml' | cut -d/ -f3- | sed 's/\.xml$//')
@@ -206,7 +206,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
         env:
-          fetch-depth: "0"
+          fetch-depth: "1"
 
       - name: Install dependencies
         run: .github/workflows/ci/dependencies.sh
@@ -216,7 +216,7 @@ jobs:
 
       - name: Check RPMSpec
         run: |
-          cd /opt/otrs/
+          cd ${GITHUB_WORKSPACE}
           git init
           su -c "bin/otrs.Console.pl Dev::Tools::RPMSpecGenerate" - otrs
           git diff --exit-code scripts/auto_build/spec/
