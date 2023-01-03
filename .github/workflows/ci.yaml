@@ -94,7 +94,7 @@ jobs:
       - name: Check Contributors
         run: |
           cd ${GITHUB_WORKSPACE}
-          git config --global safe.directory '*'
+          git config --global --add safe.directory '*'
           git init
           su -c "bin/otrs.Console.pl Dev::Code::ContributorsListUpdate" - otrs
           if [ "$(git diff --exit-code AUTHORS.md)" ]; then echo 'The ContributorsList is not updated.' && exit 1; else echo 'The ContributorsList is updated.' && exit 0; fi
