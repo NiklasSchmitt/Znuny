@@ -97,7 +97,7 @@ jobs:
           pwd
           ls -alh
           git init
-          git config --global --add safe.directory pwd
+          git config --global --add safe.directory ${GITHUB_WORKSPACE}/znuny
           ls -alh
           su -c "bin/otrs.Console.pl Dev::Code::ContributorsListUpdate" - otrs
           if [ "$(git diff --exit-code AUTHORS.md)" ]; then echo 'The ContributorsList is not updated.' && exit 1; else echo 'The ContributorsList is updated.' && exit 0; fi
