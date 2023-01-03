@@ -112,8 +112,8 @@ jobs:
 
       - name: Check Database:Schema
         run: |
-          cd ${GITHUB_WORKSPACE}
           git init
+          git config --global --add safe.directory ${GITHUB_WORKSPACE}
           SCHEMA_FILE=$(find scripts/database -type f -name '*schema.xml')
           SCHEMA_FILE_NAME=$(find scripts/database -type f -name '*schema.xml' | cut -d/ -f3- | sed 's/\.xml$//')
           echo "Found schema file $SCHEMA_FILE"
@@ -139,9 +139,9 @@ jobs:
         run: .github/workflows/ci/setup.sh
 
       - name: Check Database:InitialInsert
-        run: |
-          cd ${GITHUB_WORKSPACE}
+        run: | 
           git init
+          git config --global --add safe.directory ${GITHUB_WORKSPACE}
           INITIAL_INSERT_FILE=$(find scripts/database -type f -name '*initial_insert.xml')
           INITIAL_INSERT_FILE_NAME=$(find scripts/database -type f -name '*initial_insert.xml' | cut -d/ -f3- | sed 's/\.xml$//')
           echo "Found initial insert file $INITIAL_INSERT_FILE"
@@ -218,8 +218,8 @@ jobs:
 
       - name: Check RPMSpec
         run: |
-          cd ${GITHUB_WORKSPACE}
           git init
+          git config --global --add safe.directory ${GITHUB_WORKSPACE}
           su -c "bin/otrs.Console.pl Dev::Tools::RPMSpecGenerate" - otrs
           git diff --exit-code scripts/auto_build/spec/
           if [ "$(git diff --exit-code scripts/auto_build/spec/)" ]; then echo "The RPMSpec's are not updated." && exit 1; else echo "All RPMSpec's are updated." && exit 0; fi
