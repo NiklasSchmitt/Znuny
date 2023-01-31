@@ -29,7 +29,10 @@ jobs:
           path: codepolicy
 
       - name: Install dependencies
-        run: znuny/.github/workflows/ci/dependencies.sh
+        run: |
+          apt-get update -y
+          apt-get upgrade -y
+          apt-get install -y cpanminus make gcc npm git gettext libxml-libxml-perl libyaml-perl libxml2-utils libdatetime-perl libtemplate-perl libapache-dbi-perl
 
       - name: Prepare code policy
         run: |
