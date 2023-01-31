@@ -1,6 +1,6 @@
 # --
 # Copyright (C) 2001-2021 OTRS AG, https://otrs.com/
-# Copyright (C) 2021-2022 Znuny GmbH, https://znuny.org/
+# Copyright (C) 2021 Znuny GmbH, https://znuny.org/
 # Copyright (C) 2010 Thomas Kaltenbrunner <tkaltenbrunner at opc.de>
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
@@ -8326,20 +8326,20 @@ Ihr Helpdesk-Team
             'Zeigt in der "Ticket Priorität" Ansicht der Agenten-Oberfläche eine Liste aller am Ticket beteiligten Agenten.',
         'Shows a list of all the involved agents on this ticket, in the ticket responsible screen of the agent interface.' =>
             'Zeigt in der "Ticket Verantwortlicher" Ansicht der Agenten-Oberfläche eine Liste aller am Ticket beteiligten Agenten.',
-        'Shows a list of all the possible agents (all agents with note permissions on the queue/ticket) to determine who should be informed about this note, in the close ticket screen of the agent interface.' =>
-            'Zeigt in der "Ticket Schließen" Ansicht der Agenten-Oberfläche eine Liste aller möglichen Agenten (alle Agenten mit Berechtigung für Notizen in diesem Ticket/ dieser Queue) die informiert werden sollen.',
-        'Shows a list of all the possible agents (all agents with note permissions on the queue/ticket) to determine who should be informed about this note, in the ticket free text screen of the agent interface.' =>
-            'Zeigt in der "Ticket FreiText" Ansicht der Agenten-Oberfläche eine Liste aller möglichen Agenten (alle Agenten mit Berechtigung für Notizen in diesem Ticket/ dieser Queue) die informiert werden sollen.',
-        'Shows a list of all the possible agents (all agents with note permissions on the queue/ticket) to determine who should be informed about this note, in the ticket note screen of the agent interface.' =>
-            'Zeigt in der "Ticket Notiz" Ansicht der Agenten-Oberfläche eine Liste aller möglichen Agenten (alle Agenten mit Berechtigung für Notizen in diesem Ticket/ dieser Queue) die informiert werden sollen.',
-        'Shows a list of all the possible agents (all agents with note permissions on the queue/ticket) to determine who should be informed about this note, in the ticket owner screen of a zoomed ticket in the agent interface.' =>
-            'Zeigt in der "Ticket Besitzer" Ansicht der Agenten-Oberfläche eine Liste aller möglichen Agenten (alle Agenten mit Berechtigung für Notizen in diesem Ticket/ dieser Queue) die informiert werden sollen.',
-        'Shows a list of all the possible agents (all agents with note permissions on the queue/ticket) to determine who should be informed about this note, in the ticket pending screen of a zoomed ticket in the agent interface.' =>
-            'Zeigt in der "Warten auf Erinnerung" Ansicht der Agenten-Oberfläche eine Liste aller möglichen Agenten (alle Agenten mit Berechtigung für Notizen in diesem Ticket/ dieser Queue) die informiert werden sollen.',
-        'Shows a list of all the possible agents (all agents with note permissions on the queue/ticket) to determine who should be informed about this note, in the ticket priority screen of a zoomed ticket in the agent interface.' =>
-            'Zeigt in der "Ticket Priorität" Ansicht der Agenten-Oberfläche eine Liste aller möglichen Agenten (alle Agenten mit Berechtigung für Notizen in diesem Ticket/ dieser Queue) die informiert werden sollen.',
-        'Shows a list of all the possible agents (all agents with note permissions on the queue/ticket) to determine who should be informed about this note, in the ticket responsible screen of the agent interface.' =>
-            'Zeigt in der "Ticket Verantwortlicher" Ansicht der Agenten-Oberfläche eine Liste aller möglichen Agenten (alle Agenten mit Berechtigung für Notizen in diesem Ticket/ dieser Queue) die informiert werden sollen.',
+        'Shows a list of all the possible agents (all agents with at least ro permissions on the queue/ticket) to determine who should be informed about this note, in the close ticket screen of the agent interface.' =>
+            'Zeigt in der "Ticket Schließen"-Ansicht der Agenten-Oberfläche eine Liste aller möglichen Agenten (alle Agenten mit mindestens RO-Berechtigung in diesem Ticket/dieser Queue), die informiert werden sollen.',
+        'Shows a list of all the possible agents (all agents with at least ro permissions on the queue/ticket) to determine who should be informed about this note, in the ticket free text screen of the agent interface.' =>
+            'Zeigt in der "Ticket-FreiText"-Ansicht der Agenten-Oberfläche eine Liste aller möglichen Agenten (alle Agenten mit mindestens RO-Berechtigung in diesem Ticket/dieser Queue), die informiert werden sollen.',
+        'Shows a list of all the possible agents (all agents with at least ro permissions on the queue/ticket) to determine who should be informed about this note, in the ticket note screen of the agent interface.' =>
+            'Zeigt in der "Ticket-Notiz"-Ansicht der Agenten-Oberfläche eine Liste aller möglichen Agenten (alle Agenten mit mindestens RO-Berechtigung für Notizen in diesem Ticket/dieser Queue), die informiert werden sollen.',
+        'Shows a list of all the possible agents (all agents with at least ro permissions on the queue/ticket) to determine who should be informed about this note, in the ticket owner screen of a zoomed ticket in the agent interface.' =>
+            'Zeigt in der "Ticket-Besitzer"-Ansicht der Agenten-Oberfläche eine Liste aller möglichen Agenten (alle Agenten mit mindestens RO-Berechtigung für Notizen in diesem Ticket/dieser Queue), die informiert werden sollen.',
+        'Shows a list of all the possible agents (all agents with at least ro permissions on the queue/ticket) to determine who should be informed about this note, in the ticket pending screen of a zoomed ticket in the agent interface.' =>
+            'Zeigt in der "Warten auf Erinnerung"-Ansicht der Agenten-Oberfläche eine Liste aller möglichen Agenten (alle Agenten mit mindestens RO-Berechtigung für Notizen in diesem Ticket/dieser Queue), die informiert werden sollen.',
+        'Shows a list of all the possible agents (all agents with at least ro permissions on the queue/ticket) to determine who should be informed about this note, in the ticket priority screen of a zoomed ticket in the agent interface.' =>
+            'Zeigt in der "Ticket-Priorität"-Ansicht der Agenten-Oberfläche eine Liste aller möglichen Agenten (alle Agenten mit mindestens RO-Berechtigung für Notizen in diesem Ticket/dieser Queue), die informiert werden sollen.',
+        'Shows a list of all the possible agents (all agents with at least ro permissions on the queue/ticket) to determine who should be informed about this note, in the ticket responsible screen of the agent interface.' =>
+            'Zeigt in der "Ticket-Verantwortlicher"-Ansicht der Agenten-Oberfläche eine Liste aller möglichen Agenten (alle Agenten mit mindestens RO-Berechtigung für Notizen in diesem Ticket/dieser Queue), die informiert werden sollen.',
         'Shows a preview of the ticket overview (CustomerInfo => 1 - shows also Customer-Info, CustomerInfoMaxSize max. size in characters of Customer-Info).' =>
             'Ermöglicht eine Ticket-Übersicht mit einigen Ticketinformationen (Customer => 1 - zeigt auch die Kundeninformation, CustomerInfoMaxSize steuert die maximale Anzahl an Zeichen der Kundeninformation).',
         'Shows all both ro and rw queues in the queue view.' => 'Zeigt sowohl rw als auch ro Queues in der Queue-Ansicht.',

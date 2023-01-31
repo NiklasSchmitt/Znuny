@@ -1,4 +1,4 @@
-The following persons contributed to OTRS:
+The following persons contributed to Znuny:
 
 * 1soproni <csaba@sopron.hu>
 * Alex Kantchev <ak@otrs.com>
@@ -45,6 +45,7 @@ The following persons contributed to OTRS:
 * Kai Herlemann <43746520+KaiHerlemann@users.noreply.github.com>
 * Kamil Furtek <kfurtek@dev.opgksoftware.com>
 * Keith Moore <tenareth@gmail.com>
+* Konrad Gumienny <kgumienny@dev.opgksoftware.com>
 * Luca Maranzano <liuk@linux.it>
 * Lukas Bröring SectorNord AG <91135132+LuBroering@users.noreply.github.com>
 * Manuel Hecht <manuel.hecht@otrs.com>
@@ -65,6 +66,7 @@ The following persons contributed to OTRS:
 * Never <never.min@gmail.com>
 * NeverMin <never.min@gmail.com>
 * Niels Dimmers <niels@nielsdimmers.nl>
+* Niklas Schmitt <ns@znuny.com>
 * Nils Fiedler <nils.fiedler@otrs.com>
 * Nils Leideck <nils.leideck@otrs.com>
 * Norihiro Tanaka <noritnk@kcn.ne.jp>

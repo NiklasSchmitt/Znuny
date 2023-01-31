@@ -1,6 +1,6 @@
 # --
 # Copyright (C) 2001-2021 OTRS AG, https://otrs.com/
-# Copyright (C) 2021-2022 Znuny GmbH, https://znuny.org/
+# Copyright (C) 2021 Znuny GmbH, https://znuny.org/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (GPL). If you
@@ -13,7 +13,7 @@ use strict;
 use warnings;
 
 # There are currently errors on Perl 5.20 on Travis, disable this check for now.
-## nofilter(TidyAll::Plugin::OTRS::Perl::SyntaxCheck)
+## nofilter(TidyAll::Plugin::Znuny::Perl::SyntaxCheck)
 use IO::Socket::SSL;
 
 use parent qw(Kernel::System::MailAccount::IMAP);

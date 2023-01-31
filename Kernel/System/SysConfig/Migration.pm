@@ -1,6 +1,6 @@
 # --
 # Copyright (C) 2001-2021 OTRS AG, https://otrs.com/
-# Copyright (C) 2021-2022 Znuny GmbH, https://znuny.org/
+# Copyright (C) 2021 Znuny GmbH, https://znuny.org/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (GPL). If you
@@ -881,7 +881,7 @@ sub MigrateXMLStructure {
                 $ReplacementString = "\n\t\t\t<Hash>\n" .
                     "\t\t\t\t<DefaultItem ValueType=\"Select\">\n";
                 for my $DFoption (@DFoptions) {
-                    ## nofilter(TidyAll::Plugin::OTRS::Perl::Translatable)
+                    ## nofilter(TidyAll::Plugin::Znuny::Perl::Translatable)
                     $ReplacementString
                         .= "\t\t\t\t\t<Item ValueType=\"Option\" Value=\"$DFCount\" Translatable=\"1\">$DFoption</Item>\n";
                     $DFCount++;

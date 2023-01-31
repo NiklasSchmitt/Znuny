@@ -27,6 +27,7 @@ jobs:
         with:
           repository: znuny/ZnunyCodePolicy
           path: codepolicy
+          ref: 'rel-6_0'
 
       - name: Install dependencies
         run: |
